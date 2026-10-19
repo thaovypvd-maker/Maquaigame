@@ -139,6 +139,42 @@ h1, h2, h3 {{
     text-transform: uppercase;
 }}
 
+/* ==== KEYFRAMES LED 7 MÀU ==== */
+@keyframes rainbowLED {{
+    0%   {{
+        border-color: #ff2d55;
+        box-shadow: 0 0 14px rgba(255,45,85,0.9), 0 0 32px rgba(255,45,85,0.45), inset 0 0 12px rgba(255,45,85,0.28);
+    }}
+    14%  {{
+        border-color: #ff9500;
+        box-shadow: 0 0 14px rgba(255,149,0,0.9), 0 0 32px rgba(255,149,0,0.45), inset 0 0 12px rgba(255,149,0,0.28);
+    }}
+    28%  {{
+        border-color: #ffea00;
+        box-shadow: 0 0 14px rgba(255,234,0,0.9), 0 0 32px rgba(255,234,0,0.45), inset 0 0 12px rgba(255,234,0,0.28);
+    }}
+    42%  {{
+        border-color: #2dff5c;
+        box-shadow: 0 0 14px rgba(45,255,92,0.9), 0 0 32px rgba(45,255,92,0.45), inset 0 0 12px rgba(45,255,92,0.28);
+    }}
+    57%  {{
+        border-color: #00e5ff;
+        box-shadow: 0 0 14px rgba(0,229,255,0.9), 0 0 32px rgba(0,229,255,0.45), inset 0 0 12px rgba(0,229,255,0.28);
+    }}
+    71%  {{
+        border-color: #2d6bff;
+        box-shadow: 0 0 14px rgba(45,107,255,0.9), 0 0 32px rgba(45,107,255,0.45), inset 0 0 12px rgba(45,107,255,0.28);
+    }}
+    85%  {{
+        border-color: #bb33ff;
+        box-shadow: 0 0 14px rgba(187,51,255,0.9), 0 0 32px rgba(187,51,255,0.45), inset 0 0 12px rgba(187,51,255,0.28);
+    }}
+    100% {{
+        border-color: #ff2d55;
+        box-shadow: 0 0 14px rgba(255,45,85,0.9), 0 0 32px rgba(255,45,85,0.45), inset 0 0 12px rgba(255,45,85,0.28);
+    }}
+}}
+
 .intro-box {{
     background: rgba(0, 22, 45, 0.68);
     border: 2px solid #00d5ff;
@@ -146,7 +182,7 @@ h1, h2, h3 {{
     padding: 26px 28px;
     margin: 20px 0;
     backdrop-filter: blur(6px);
-    animation: ledPulse 2.5s infinite;
+    animation: rainbowLED 5s linear infinite;
     color: #dff6ff;
     line-height: 1.8;
 }}
@@ -195,31 +231,23 @@ h1, h2, h3 {{
     color: #ffd27f;
 }}
 
+/* ==== KHUNG CÂU HỎI — LED 7 MÀU ==== */
 .question-box {{
     background: rgba(0, 22, 45, 0.62);
-    border: 2px solid #00d5ff;
+    border: 3px solid #00d5ff;
     border-radius: 14px;
     padding: 22px 26px;
     margin-bottom: 20px;
     backdrop-filter: blur(6px);
-    animation: ledPulse 2.2s infinite;
+    animation: rainbowLED 4s linear infinite;
     font-size: 1.18rem;
     font-weight: 700;
     color: #dff6ff;
     text-shadow: 0 0 8px rgba(0, 213, 255, 0.6);
 }}
-@keyframes ledPulse {{
-    0%, 100% {{
-        border-color: #00b8e8;
-        box-shadow: 0 0 10px #00b8e8, 0 0 22px rgba(0,184,232,0.4), inset 0 0 14px rgba(0,184,232,0.15);
-    }}
-    50% {{
-        border-color: #9ff0ff;
-        box-shadow: 0 0 22px #00d5ff, 0 0 48px rgba(0,213,255,0.85), inset 0 0 28px rgba(0,213,255,0.35);
-    }}
-}}
 
-.stButton > button {{
+/* ==== NÚT ĐÁP ÁN — LED 7 MÀU ==== */
+[class*="st-key-opt_"] button {{
     background: rgba(0, 18, 38, 0.72) !important;
     color: #dff6ff !important;
     border: 2px solid #00c8ff !important;
@@ -230,29 +258,17 @@ h1, h2, h3 {{
     font-size: 1.05rem !important;
     width: 100% !important;
     text-align: left !important;
-    box-shadow: 0 0 10px rgba(0,200,255,0.5), inset 0 0 8px rgba(0,200,255,0.15) !important;
     transition: all 0.18s ease !important;
-    animation: ledBlink 1.6s infinite;
+    animation: rainbowLED 2.5s linear infinite !important;
     margin-bottom: 6px;
 }}
-.stButton > button:hover {{
+[class*="st-key-opt_"] button:hover {{
     background: rgba(0, 60, 110, 0.9) !important;
     color: #ffffff !important;
     transform: translateY(-1px) scale(1.01);
-    box-shadow: 0 0 22px #00e5ff, 0 0 44px rgba(0,229,255,0.7), inset 0 0 16px rgba(0,229,255,0.35) !important;
-    border-color: #00ffff !important;
-}}
-@keyframes ledBlink {{
-    0%, 100% {{
-        border-color: #00c8ff;
-        box-shadow: 0 0 8px rgba(0,200,255,0.55), inset 0 0 8px rgba(0,200,255,0.15);
-    }}
-    50% {{
-        border-color: #00ffff;
-        box-shadow: 0 0 20px rgba(0,255,255,0.9), inset 0 0 16px rgba(0,255,255,0.35);
-    }}
 }}
 
+/* ==== NÚT BẮT ĐẦU — VÀNG ==== */
 .st-key-start_btn button {{
     background: rgba(70, 40, 0, 0.85) !important;
     border: 2px solid #ffcc55 !important;
@@ -273,6 +289,7 @@ h1, h2, h3 {{
     50% {{ border-color: #ffe9a0; box-shadow: 0 0 28px rgba(255,233,160,1), inset 0 0 22px rgba(255,233,160,0.45); }}
 }}
 
+/* ==== NÚT TIẾP TỤC — XANH LÁ ==== */
 .st-key-continue_btn button {{
     background: rgba(0, 60, 30, 0.85) !important;
     border: 2px solid #22ff88 !important;
@@ -293,6 +310,7 @@ h1, h2, h3 {{
     50% {{ border-color: #88ffcc; box-shadow: 0 0 24px rgba(136,255,204,1), inset 0 0 20px rgba(136,255,204,0.4); }}
 }}
 
+/* ==== NÚT CHỌN LẠI — CAM ==== */
 .st-key-retry_btn {{
     position: fixed !important;
     bottom: 12% !important;
@@ -320,6 +338,7 @@ h1, h2, h3 {{
     50% {{ border-color: #ffbb66; box-shadow: 0 0 28px rgba(255,187,102,1), inset 0 0 22px rgba(255,187,102,0.45); }}
 }}
 
+/* ==== NÚT CHƠI LẠI — TÍM ==== */
 .st-key-restart_btn button {{
     background: rgba(40, 0, 60, 0.85) !important;
     border: 2px solid #bb66ff !important;
@@ -334,6 +353,7 @@ h1, h2, h3 {{
     box-shadow: 0 0 30px #cc88ff, 0 0 60px rgba(204,136,255,0.7) !important;
 }}
 
+/* ==== KHUNG GIẢI THÍCH — XANH NGỌC ==== */
 .explain-box {{
     background: rgba(0, 30, 50, 0.78);
     border: 2px solid #00ffcc;
@@ -367,6 +387,7 @@ h1, h2, h3 {{
     color: #d0f0ff;
 }}
 
+/* ==== MÀN HÌNH ĐỎ KHI SAI ==== */
 .wrong-overlay {{
     position: fixed;
     inset: 0;
@@ -429,16 +450,16 @@ h1, h2, h3 {{
     text-align: center;
 }}
 
+/* ==== MÀN KẾT THÚC ==== */
 .end-box {{
     background: rgba(0, 20, 40, 0.75);
-    border: 2px solid #00d5ff;
+    border: 3px solid #00d5ff;
     border-radius: 16px;
     padding: 30px 28px;
     text-align: center;
     backdrop-filter: blur(8px);
-    box-shadow: 0 0 22px #00d5ff, 0 0 60px rgba(0,213,255,0.6), inset 0 0 28px rgba(0,213,255,0.15);
+    animation: rainbowLED 5s linear infinite;
     margin: 20px 0;
-    animation: ledPulse 3s infinite;
 }}
 .end-label {{
     color: #7ab8d8;
