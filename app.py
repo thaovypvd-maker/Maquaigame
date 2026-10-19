@@ -7,16 +7,14 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# ==== ẢNH NỀN (raw GitHub) ====
 BG_URL = "https://raw.githubusercontent.com/thaovypvd-maker/Maquaigame/80969180e42358d1ec24d4ae8fd4612de5b3a02c/Background%20.JPG"
 
-# ==== BỘ CÂU HỎI ====
 QUESTIONS = [
     {
         "q": "Loại ma nào là người bị hổ cắn trong văn hóa dân gian?",
         "options": ["Ma trành", "Ma da", "Quỷ đói", "Hổ tinh"],
         "correct": 0,
-        "explanation": "Ma trành là linh hồn của người bị hổ ăn thịt. Người này không thể siêu thoát mà trở thành \"nô lệ\" cho con hổ, đi dụ dỗ thêm người khác cho hổ bắt ăn.",
+        "explanation": "Ma trành là linh hồn của người bị hổ ăn thịt. Người này không thể siêu thoát mà trở thành nô lệ cho con hổ, đi dụ dỗ thêm người khác cho hổ bắt ăn.",
     },
     {
         "q": "Những linh hồn mất ở sông hồ được dân gian tin là sẽ thành ma gì?",
@@ -34,19 +32,19 @@ QUESTIONS = [
         "q": "Một yêu quái là một cây chiên đàn cổ thụ, ngàn năm thành yêu quái đó là?",
         "options": ["Hồ ly tinh", "Mộc tinh - quỷ xương cuồng", "Tinh tinh", "Xà tinh"],
         "correct": 1,
-        "explanation": "Mộc tinh hay còn gọi là quỷ xương cuồchng là là một yêu quái nổi tiếng trong? truyền thuyết và th",
-ần thoại dân gian Việt        Nam từ thời thượng cổ ( "thời đại Kinhoptions Dương Vương đến thời Đinh Ti":ên Hoàng).",
+        "explanation": "Mộc tinh hay còn gọi là quỷ xương cuồng là một yêu quái nổi tiếng trong truyền thuyết và thần thoại dân gian Việt Nam từ thời thượng cổ, thời đại Kinh Dương Vương đến thời Đinh Tiên Hoàng.",
     },
-    [" {
+    {
         "q": "Chó trắng mũi đỏ trong dân gian thường được gắn với hình ảnh là?",
         "options": ["Chó đội nón mê", "Quỷ đầu cẩu", "Cẩu huyết", "Tất cả đáp án trên"],
         "correct": 0,
-        "explanation": "Chó đội nón mê là một sinh vật hoặc điềm gở mang tính truyền thuyết và tín ngưỡng dân gian lâu đời tại Việt Nam (đặc biệt là vùng đồng quê Bắc Bộ).",
+        "explanation": "Chó đội nón mê là một sinh vật hoặc điềm gở mang tính truyền thuyết và tín ngưỡng dân gian lâu đời tại Việt Nam, đặc biệt là vùng đồng quê Bắc Bộ.",
     },
     {
-        "q": "Loại ma được thờ cúng trong nhà để bảo vệ, canh giữ điền trạMa trơi", "Ma lai", "Ma xó", "Ma men"],
+        "q": "Loại ma được thờ cúng trong nhà để bảo vệ, canh giữ điền trạch là?",
+        "options": ["Ma trơi", "Ma lai", "Ma xó", "Ma men"],
         "correct": 2,
-        "explanation": "Ma xó là một loại linh hồn hoặc vong linh được \"nuôi dưỡng\" và thờ cúng trong nhà để canh giữ, bảo vệ gia trạch hoặc phục vụ cho mục đích riêng của chủ nhân.",
+        "explanation": "Ma xó là một loại linh hồn hoặc vong linh được nuôi dưỡng và thờ cúng trong nhà để canh giữ, bảo vệ gia trạch hoặc phục vụ cho mục đích riêng của chủ nhân.",
     },
     {
         "q": "Loại ma có hình dạng là một đám lửa xanh?",
@@ -87,7 +85,6 @@ def get_title(n):
             return name, icon
     return TITLES[0][2], TITLES[0][3]
 
-# ==== KHỞI TẠO STATE ====
 defaults = {
     "started": False,
     "q_idx": 0,
@@ -101,7 +98,6 @@ for k, v in defaults.items():
     if k not in st.session_state:
         st.session_state[k] = v
 
-# ==== CSS ====
 CSS = f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;900&family=Playfair+Display:wght@700;900&display=swap');
@@ -219,7 +215,7 @@ h1, h2, h3 {{
     }}
     50% {{
         border-color: #9ff0ff;
-        box-shadow:: 0 0 22px #00d 5ff, 0 0 48px30 rgba(0,213,255,0.85), insetpx 0 0 28px rgba (0,213,255,0.3528);
+        box-shadow: 0 0 22px #00d5ff, 0 0 48px rgba(0,213,255,0.85), inset 0 0 28px rgba(0,213,255,0.35);
     }}
 }}
 
@@ -437,7 +433,7 @@ h1, h2, h3 {{
     background: rgba(0, 20, 40, 0.75);
     border: 2px solid #00d5ff;
     border-radius: 16px;
-    paddingpx;
+    padding: 30px 28px;
     text-align: center;
     backdrop-filter: blur(8px);
     box-shadow: 0 0 22px #00d5ff, 0 0 60px rgba(0,213,255,0.6), inset 0 0 28px rgba(0,213,255,0.15);
@@ -510,7 +506,6 @@ h1, h2, h3 {{
 """
 st.markdown(CSS, unsafe_allow_html=True)
 
-# ==== HELPERS ====
 def lanterns_display(n):
     return "🏮" * n if n > 0 else "—"
 
@@ -522,7 +517,6 @@ def render_status_bar(idx):
     </div>
     """, unsafe_allow_html=True)
 
-# ==== SCREENS ====
 def render_intro():
     st.markdown("""
     <div class="intro-box">
@@ -641,11 +635,9 @@ def render_end():
         st.session_state.wrong_attempted = set()
         st.rerun()
 
-# ==== HEADER ====
 st.markdown('<div class="main-title">👻 ÂM BINH KÝ 👻</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Ký sự trắc nghiệm ma quái dân gian</div>', unsafe_allow_html=True)
 
-# ==== ROUTING ====
 if st.session_state.finished:
     render_end()
 elif not st.session_state.started:
