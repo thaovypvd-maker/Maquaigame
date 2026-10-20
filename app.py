@@ -1,4 +1,6 @@
+import random
 import streamlit as st
+from questions import QUESTIONS
 
 st.set_page_config(
     page_title="Âm Binh Ký",
@@ -8,69 +10,6 @@ st.set_page_config(
 )
 
 BG_URL = "https://raw.githubusercontent.com/thaovypvd-maker/Maquaigame/80969180e42358d1ec24d4ae8fd4612de5b3a02c/Background%20.JPG"
-
-QUESTIONS = [
-    {
-        "q": "Loại ma nào là người bị hổ cắn trong văn hóa dân gian?",
-        "options": ["Ma trành", "Ma da", "Quỷ đói", "Hổ tinh"],
-        "correct": 0,
-        "explanation": "Ma trành là linh hồn của người bị hổ ăn thịt. Người này không thể siêu thoát mà trở thành nô lệ cho con hổ, đi dụ dỗ thêm người khác cho hổ bắt ăn.",
-    },
-    {
-        "q": "Những linh hồn mất ở sông hồ được dân gian tin là sẽ thành ma gì?",
-        "options": ["Ma lon", "Ma đuối", "Ma da", "Giao Long"],
-        "correct": 2,
-        "explanation": "Ma da là linh hồn của những người chết đuối, thường ẩn nấp ở sông, ao, hồ. Dân gian quan niệm ma da hay kéo chân người bơi lội để bắt thế mạng nhằm tìm cách siêu thoát.",
-    },
-    {
-        "q": "Một loài quỷ có nguồn gốc từ Phật Giáo của Ấn Độ, đóng vai trò canh giữ, bảo vệ chùa chiền là?",
-        "options": ["Quỷ đói", "Quỷ đầu cẩu", "Quỷ vương", "Quỷ dạ xoa - Yaksha"],
-        "correct": 3,
-        "explanation": "Quỷ Dạ Xoa là một chủng loại linh thể hoặc quỷ thần có nguồn gốc từ thần thoại Ấn Độ cổ đại, sau này được du nhập và tiếp biến trong văn hóa Phật giáo, Bà-la-môn giáo và dân gian Á Đông.",
-    },
-    {
-        "q": "Một yêu quái là một cây chiên đàn cổ thụ, ngàn năm thành yêu quái đó là?",
-        "options": ["Hồ ly tinh", "Mộc tinh - quỷ xương cuồng", "Tinh tinh", "Xà tinh"],
-        "correct": 1,
-        "explanation": "Mộc tinh hay còn gọi là quỷ xương cuồng là một yêu quái nổi tiếng trong truyền thuyết và thần thoại dân gian Việt Nam từ thời thượng cổ, thời đại Kinh Dương Vương đến thời Đinh Tiên Hoàng.",
-    },
-    {
-        "q": "Chó trắng mũi đỏ trong dân gian thường được gắn với hình ảnh là?",
-        "options": ["Chó đội nón mê", "Quỷ đầu cẩu", "Cẩu huyết", "Tất cả đáp án trên"],
-        "correct": 0,
-        "explanation": "Chó đội nón mê là một sinh vật hoặc điềm gở mang tính truyền thuyết và tín ngưỡng dân gian lâu đời tại Việt Nam, đặc biệt là vùng đồng quê Bắc Bộ.",
-    },
-    {
-        "q": "Loại ma được thờ cúng trong nhà để bảo vệ, canh giữ điền trạch là?",
-        "options": ["Ma trơi", "Ma lai", "Ma xó", "Ma men"],
-        "correct": 2,
-        "explanation": "Ma xó là một loại linh hồn hoặc vong linh được nuôi dưỡng và thờ cúng trong nhà để canh giữ, bảo vệ gia trạch hoặc phục vụ cho mục đích riêng của chủ nhân.",
-    },
-    {
-        "q": "Loại ma có hình dạng là một đám lửa xanh?",
-        "options": ["Ma giấu", "Ma đói - ngạ quỷ", "Thần trùng", "Ma trơi"],
-        "correct": 3,
-        "explanation": "Ma trơi là hiện tượng các đốm lửa nhỏ, lập lòe màu xanh nhạt, trắng, đỏ hoặc vàng thường xuất hiện vào ban đêm ở các khu vực như nghĩa trang, bãi tha ma hay đầm lầy.",
-    },
-    {
-        "q": "Một dạng quỷ hút máu trong văn hóa tín ngưỡng Tây Bắc là?",
-        "options": ["Ma cà rồng", "Ma cà chua", "Ma cà tím", "Phí phông"],
-        "correct": 3,
-        "explanation": "Trong thế giới quan của người Thái, Phí Phông được xem là một dạng quỷ hút máu hoặc kết hợp giữa xác người và hồn ma.",
-    },
-    {
-        "q": "Loài thủy quái có hình dạng giống rồng trong dân gian là?",
-        "options": ["Thuồng luồng", "Long vương", "Lông bông", "Ma da"],
-        "correct": 0,
-        "explanation": "Thuồng luồng là một loài thủy quái huyền thoại trong văn hóa dân gian Việt Nam và Á Đông. Được mô tả là hung dữ, có sức mạnh lớn, thường lật úp ghe thuyền hoặc bắt người hại dân vùng sông nước.",
-    },
-    {
-        "q": "Một loại ma hay được dùng để chửi người khác?",
-        "options": ["Ma lai", "Ma gà", "Âm binh", "Quỷ nhập tràng"],
-        "correct": 2,
-        "explanation": "Âm binh thường bao gồm các vong hồn chưa siêu thoát, oan hồn, linh hồn binh lính tử trận, hoặc các cô hồn vất vưởng được các thầy phù thủy, pháp sư, thầy cúng chiêu mộ và sai khiến.",
-    },
-]
 
 TITLES = [
     (0, 3, "Pháp sư hệ vật lý", "🔮"),
@@ -93,10 +32,21 @@ defaults = {
     "show_wrong": False,
     "show_explanation": False,
     "finished": False,
+    "quiz": [],
 }
 for k, v in defaults.items():
     if k not in st.session_state:
         st.session_state[k] = v
+
+def start_new_game():
+    st.session_state.quiz = random.sample(QUESTIONS, 10)
+    st.session_state.q_idx = 0
+    st.session_state.lanterns = 0
+    st.session_state.wrong_attempted = set()
+    st.session_state.show_wrong = False
+    st.session_state.show_explanation = False
+    st.session_state.finished = False
+    st.session_state.started = True
 
 CSS = f"""
 <style>
@@ -139,40 +89,15 @@ h1, h2, h3 {{
     text-transform: uppercase;
 }}
 
-/* ==== KEYFRAMES LED 7 MÀU ==== */
 @keyframes rainbowLED {{
-    0%   {{
-        border-color: #ff2d55;
-        box-shadow: 0 0 14px rgba(255,45,85,0.9), 0 0 32px rgba(255,45,85,0.45), inset 0 0 12px rgba(255,45,85,0.28);
-    }}
-    14%  {{
-        border-color: #ff9500;
-        box-shadow: 0 0 14px rgba(255,149,0,0.9), 0 0 32px rgba(255,149,0,0.45), inset 0 0 12px rgba(255,149,0,0.28);
-    }}
-    28%  {{
-        border-color: #ffea00;
-        box-shadow: 0 0 14px rgba(255,234,0,0.9), 0 0 32px rgba(255,234,0,0.45), inset 0 0 12px rgba(255,234,0,0.28);
-    }}
-    42%  {{
-        border-color: #2dff5c;
-        box-shadow: 0 0 14px rgba(45,255,92,0.9), 0 0 32px rgba(45,255,92,0.45), inset 0 0 12px rgba(45,255,92,0.28);
-    }}
-    57%  {{
-        border-color: #00e5ff;
-        box-shadow: 0 0 14px rgba(0,229,255,0.9), 0 0 32px rgba(0,229,255,0.45), inset 0 0 12px rgba(0,229,255,0.28);
-    }}
-    71%  {{
-        border-color: #2d6bff;
-        box-shadow: 0 0 14px rgba(45,107,255,0.9), 0 0 32px rgba(45,107,255,0.45), inset 0 0 12px rgba(45,107,255,0.28);
-    }}
-    85%  {{
-        border-color: #bb33ff;
-        box-shadow: 0 0 14px rgba(187,51,255,0.9), 0 0 32px rgba(187,51,255,0.45), inset 0 0 12px rgba(187,51,255,0.28);
-    }}
-    100% {{
-        border-color: #ff2d55;
-        box-shadow: 0 0 14px rgba(255,45,85,0.9), 0 0 32px rgba(255,45,85,0.45), inset 0 0 12px rgba(255,45,85,0.28);
-    }}
+    0%   {{ border-color: #ff2d55; box-shadow: 0 0 14px rgba(255,45,85,0.9), 0 0 32px rgba(255,45,85,0.45), inset 0 0 12px rgba(255,45,85,0.28); }}
+    14%  {{ border-color: #ff9500; box-shadow: 0 0 14px rgba(255,149,0,0.9), 0 0 32px rgba(255,149,0,0.45), inset 0 0 12px rgba(255,149,0,0.28); }}
+    28%  {{ border-color: #ffea00; box-shadow: 0 0 14px rgba(255,234,0,0.9), 0 0 32px rgba(255,234,0,0.45), inset 0 0 12px rgba(255,234,0,0.28); }}
+    42%  {{ border-color: #2dff5c; box-shadow: 0 0 14px rgba(45,255,92,0.9), 0 0 32px rgba(45,255,92,0.45), inset 0 0 12px rgba(45,255,92,0.28); }}
+    57%  {{ border-color: #00e5ff; box-shadow: 0 0 14px rgba(0,229,255,0.9), 0 0 32px rgba(0,229,255,0.45), inset 0 0 12px rgba(0,229,255,0.28); }}
+    71%  {{ border-color: #2d6bff; box-shadow: 0 0 14px rgba(45,107,255,0.9), 0 0 32px rgba(45,107,255,0.45), inset 0 0 12px rgba(45,107,255,0.28); }}
+    85%  {{ border-color: #bb33ff; box-shadow: 0 0 14px rgba(187,51,255,0.9), 0 0 32px rgba(187,51,255,0.45), inset 0 0 12px rgba(187,51,255,0.28); }}
+    100% {{ border-color: #ff2d55; box-shadow: 0 0 14px rgba(255,45,85,0.9), 0 0 32px rgba(255,45,85,0.45), inset 0 0 12px rgba(255,45,85,0.28); }}
 }}
 
 .intro-box {{
@@ -231,7 +156,6 @@ h1, h2, h3 {{
     color: #ffd27f;
 }}
 
-/* ==== KHUNG CÂU HỎI — LED 7 MÀU ==== */
 .question-box {{
     background: rgba(0, 22, 45, 0.62);
     border: 3px solid #00d5ff;
@@ -246,7 +170,6 @@ h1, h2, h3 {{
     text-shadow: 0 0 8px rgba(0, 213, 255, 0.6);
 }}
 
-/* ==== NÚT ĐÁP ÁN — LED 7 MÀU ==== */
 [class*="st-key-opt_"] button {{
     background: rgba(0, 18, 38, 0.72) !important;
     color: #dff6ff !important;
@@ -268,7 +191,6 @@ h1, h2, h3 {{
     transform: translateY(-1px) scale(1.01);
 }}
 
-/* ==== NÚT BẮT ĐẦU — VÀNG ==== */
 .st-key-start_btn button {{
     background: rgba(70, 40, 0, 0.85) !important;
     border: 2px solid #ffcc55 !important;
@@ -289,7 +211,6 @@ h1, h2, h3 {{
     50% {{ border-color: #ffe9a0; box-shadow: 0 0 28px rgba(255,233,160,1), inset 0 0 22px rgba(255,233,160,0.45); }}
 }}
 
-/* ==== NÚT TIẾP TỤC — XANH LÁ ==== */
 .st-key-continue_btn button {{
     background: rgba(0, 60, 30, 0.85) !important;
     border: 2px solid #22ff88 !important;
@@ -310,7 +231,6 @@ h1, h2, h3 {{
     50% {{ border-color: #88ffcc; box-shadow: 0 0 24px rgba(136,255,204,1), inset 0 0 20px rgba(136,255,204,0.4); }}
 }}
 
-/* ==== NÚT CHỌN LẠI — CAM ==== */
 .st-key-retry_btn {{
     position: fixed !important;
     bottom: 12% !important;
@@ -338,7 +258,6 @@ h1, h2, h3 {{
     50% {{ border-color: #ffbb66; box-shadow: 0 0 28px rgba(255,187,102,1), inset 0 0 22px rgba(255,187,102,0.45); }}
 }}
 
-/* ==== NÚT CHƠI LẠI — TÍM ==== */
 .st-key-restart_btn button {{
     background: rgba(40, 0, 60, 0.85) !important;
     border: 2px solid #bb66ff !important;
@@ -353,7 +272,6 @@ h1, h2, h3 {{
     box-shadow: 0 0 30px #cc88ff, 0 0 60px rgba(204,136,255,0.7) !important;
 }}
 
-/* ==== KHUNG GIẢI THÍCH — XANH NGỌC ==== */
 .explain-box {{
     background: rgba(0, 30, 50, 0.78);
     border: 2px solid #00ffcc;
@@ -387,7 +305,6 @@ h1, h2, h3 {{
     color: #d0f0ff;
 }}
 
-/* ==== MÀN HÌNH ĐỎ KHI SAI ==== */
 .wrong-overlay {{
     position: fixed;
     inset: 0;
@@ -428,17 +345,9 @@ h1, h2, h3 {{
     filter: drop-shadow(0 0 24px #ff2222) drop-shadow(0 0 48px #aa0000);
 }}
 @keyframes descend {{
-    0% {{
-        transform: translateY(-500px);
-        opacity: 0;
-    }}
-    20% {{
-        opacity: 1;
-    }}
-    100% {{
-        transform: translateY(0);
-        opacity: 1;
-    }}
+    0% {{ transform: translateY(-500px); opacity: 0; }}
+    20% {{ opacity: 1; }}
+    100% {{ transform: translateY(0); opacity: 1; }}
 }}
 .wrong-hint {{
     color: #ffd0d0;
@@ -450,7 +359,6 @@ h1, h2, h3 {{
     text-align: center;
 }}
 
-/* ==== MÀN KẾT THÚC ==== */
 .end-box {{
     background: rgba(0, 20, 40, 0.75);
     border: 3px solid #00d5ff;
@@ -557,12 +465,15 @@ def render_intro():
     """, unsafe_allow_html=True)
 
     if st.button("🕯️   Bắt đầu hành trình", key="start_btn", use_container_width=True):
-        st.session_state.started = True
+        start_new_game()
         st.rerun()
 
 def render_question():
     idx = st.session_state.q_idx
-    q = QUESTIONS[idx]
+    if idx >= len(st.session_state.quiz):
+        st.session_state.finished = True
+        st.rerun()
+    q = st.session_state.quiz[idx]
     render_status_bar(idx)
 
     st.markdown(f'<div class="question-box">❓ {q["q"]}</div>', unsafe_allow_html=True)
@@ -602,7 +513,7 @@ def render_wrong():
 
 def render_explanation():
     idx = st.session_state.q_idx
-    q = QUESTIONS[idx]
+    q = st.session_state.quiz[idx]
     correct_letter = chr(65 + q["correct"])
     correct_text = q["options"][q["correct"]]
 
@@ -621,7 +532,7 @@ def render_explanation():
     if st.button("➜  Tiếp tục", key="continue_btn", use_container_width=True):
         st.session_state.show_explanation = False
         st.session_state.q_idx += 1
-        if st.session_state.q_idx >= len(QUESTIONS):
+        if st.session_state.q_idx >= len(st.session_state.quiz):
             st.session_state.finished = True
         st.rerun()
 
@@ -651,9 +562,9 @@ def render_end():
     """, unsafe_allow_html=True)
 
     if st.button("🔄  Chơi lại từ đầu", key="restart_btn", use_container_width=True):
-        for k in ["q_idx", "lanterns", "show_wrong", "show_explanation", "finished", "started"]:
-            st.session_state[k] = 0 if k in ("q_idx", "lanterns") else False
-        st.session_state.wrong_attempted = set()
+        st.session_state.started = False
+        st.session_state.finished = False
+        st.session_state.quiz = []
         st.rerun()
 
 st.markdown('<div class="main-title">👻 ÂM BINH KÝ 👻</div>', unsafe_allow_html=True)
