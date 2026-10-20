@@ -1,6 +1,8 @@
 import random
 import streamlit as st
-from questions import QUESTIONS
+# from questions import QUESTIONS
+import questions
+QUESTIONS = questions.QUESTIONS
 
 st.set_page_config(
     page_title="Âm Binh Ký",
