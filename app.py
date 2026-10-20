@@ -1,6 +1,5 @@
 import random
 import streamlit as st
-# from questions import QUESTIONS
 import questions
 QUESTIONS = questions.QUESTIONS
 
